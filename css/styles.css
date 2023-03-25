@@ -5,6 +5,7 @@
   --hero-text: #ffffff;
   --title: #2e2f42;
   --foother-text: #f4f4fd;
+  --color-border: #e7e9fc;
 }
 
 body {
@@ -14,6 +15,24 @@ body {
   background: var(--hero-text);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+img {
+  display: block;
+}
+
 .list {
   text-decoration: none;
 }
@@ -21,7 +40,22 @@ body {
   text-decoration: none;
 }
 
+.container {
+  width: 1158px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
 /* ----------HEADER----------------------- */
+header {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header .container {
+  display: flex;
+}
+
 .logo {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
@@ -46,15 +80,38 @@ body {
   list-style-type: none;
 }
 
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navigation {
+  display: flex;
+  margin-left: 76px;
+}
+.navigation .item + .item {
+  margin-left: 40px;
+}
+
 .adress {
   font-style: normal;
+  margin-left: auto;
 }
+
 .navigation-link {
+  display: block;
+  padding: 24px 0 24px 0;
+
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--title);
+}
+
+.adress-list {
+  display: flex;
+  gap: 0 40px;
 }
 
 .contacts {
@@ -73,14 +130,19 @@ body {
 
 /* ----------------HERO------------------------ */
 .hero-btn {
+  display: block;
+  margin: 0 auto;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  background-color: #4d5ae5;
+  background-color: var(--accent-color);
   color: var(--hero-text);
   font-family: "Roboto", sans-serif;
   cursor: pointer;
+  border-radius: 4px;
+  border: transparent;
+  padding: 16px 32px;
 }
 
 .hero-btn:hover,
@@ -90,19 +152,34 @@ body {
 
 .hero {
   background-color: var(--title);
+  padding: 188px 0;
 }
 .hero-title {
+  width: 496px;
   font-size: 56px;
   line-height: 1.07;
   color: var(--hero-text);
   text-align: center;
   letter-spacing: 0.02em;
+  margin: 0 auto 48px auto;
 }
 
 /* ------------------Company values-------------- */
+.company-values {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
 .company-values-list {
+  display: flex;
+  gap: 0 24px;
   list-style-type: none;
   line-height: 1.5;
+}
+
+.company-values-list > .item {
+  display: block;
+  width: calc((100% - 72px) / 4);
 }
 
 .company-values-title {
@@ -118,17 +195,31 @@ body {
 
 /* --------------products and team---------------------- */
 
-.products-list,
+.products {
+  padding-bottom: 120px;
+}
+
+.products-list {
+  display: flex;
+  gap: 0 24px;
+  list-style-type: none;
+}
+
 .team-list {
+  display: flex;
+  gap: 0 24px;
   list-style-type: none;
 }
 
 .team .team-item {
   background-color: var(--hero-text);
+  align-items: center;
 }
 
 .team {
   background-color: var(--foother-text);
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 
 .products-title,
@@ -139,9 +230,11 @@ body {
   text-transform: capitalize;
   letter-spacing: 0.02em;
   color: var(--title);
+  margin-bottom: 72px;
 }
 
 .team-item-title {
+  text-align: center;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
@@ -149,6 +242,7 @@ body {
   color: var(--title);
 }
 .team-text {
+  text-align: center;
   line-height: 1.5;
 }
 
@@ -156,18 +250,45 @@ body {
 .foother {
   color: var(--foother-text);
   background-color: var(--title);
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
+
 .logo-footer {
   color: var(--foother-text);
 }
+.foother-text {
+  margin-top: 16px;
+  width: 264px;
+}
 
 /* --------------   P O R T F O L I O -------------- */
-.filters-list,
+.portfolio {
+  padding-top: 96px;
+  padding-bottom: 120px;
+}
+
+.filters-list {
+  display: flex;
+  gap: 0 24px;
+  margin-bottom: 72px;
+  justify-content: center;
+}
+
+.filters-list {
+  list-style-type: none;
+}
 .portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 24px;
   list-style-type: none;
 }
 
 .filters-btn {
+  padding: 12px 24px;
+  border-radius: 4px;
+  border: transparent;
   background-color: var(--foother-text);
   color: var(--accent-color);
   font-weight: 500;
@@ -197,6 +318,17 @@ body {
 
 .portfolio-list {
   line-height: 1.5;
+}
+
+.portfolio-list .item {
+  box-sizing: border-box;
+  width: calc((100% - 48px) / 3);
+}
+
+.portfolio-list .card {
+  border: 1px solid var(--color-border);
+  border-top: none;
+  padding: 32px 16px 32px 16px;
 }
 
 .portfolio-text {
